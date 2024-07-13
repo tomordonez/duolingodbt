@@ -1,0 +1,44 @@
+version: 2
+
+sources:
+  - name: bigquery
+    description: Duolingo logs of 13 million student learning traces
+    project: dataeng-412617
+    dataset: cs6795
+    tables:
+      - name: duolingo_log_raw
+        description: Duolingo raw data
+
+      - name: lexeme_reference_modifier
+        description: Verb modifiers, morphological components for the surface form like tense, gender, person.
+        columns:
+          - name: modifier_code
+            tests:
+              - not_null
+              - unique
+          
+          - name: modifier_category
+            tests:
+              - not_null
+          
+          - name: modifier_detail
+            tests:
+              - not_null
+      
+      - name: lexeme_reference_pos
+        description: High-level Part of Speech, POS
+        columns:
+          - name: pos_code
+            tests:
+              - not_null
+              - unique
+          
+          - name: pos_category
+            tests:
+              - not_null
+              - accepted_values:
+                  values: ['POS']
+          
+          - name: pos_detail
+            tests:
+              - not_null
