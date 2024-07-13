@@ -1,0 +1,7 @@
+language_code,language_name,is_germanic,is_romance
+en,English,true,false
+de,German,true,false
+es,Spanish,false,true
+fr,French,false,true
+it,Italian,false,true
+pt,Portuguese,false,true

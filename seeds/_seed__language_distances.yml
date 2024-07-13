@@ -1,0 +1,26 @@
+version: 2
+
+seeds:
+  - name: language_distances
+    description: >
+      Language distances including lexical and phonological.
+      Reference: W. Heeringa, C. Gooskens, and V. J. van Heuven,
+      "Comparing Germanic, Romance and Slavic: Relationships among linguistic distances," 
+      Lingua, vol. 287, no. 103512, May 2023.
+    columns:
+      - name: language_pair_code
+        data_tests:
+          - unique
+          - not_null
+      - name: source_language
+        data_tests:
+          - not_null
+      - name: target_language
+        data_tests:
+          - not_null
+      - name: lexical_distance
+        data_tests:
+          - not_null
+      - name: phonological_distance
+        data_tests:
+          - not_null

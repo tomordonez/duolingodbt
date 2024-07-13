@@ -1,0 +1,26 @@
+version: 2
+
+seeds:
+  - name: languages
+    description: A mapping of two-letter languages to language names and other properties
+    columns:
+      - name: language_code
+        data_tests:
+          - unique
+          - not_null
+      - name: language_name
+        data_tests:
+          - unique
+          - not_null
+      - name: is_germanic
+        data_tests:
+          - unique
+          - not_null
+          - accepted_values:
+              values: [true, false]
+      - name: is_romance
+        data_tests:
+          - unique
+          - not_null
+          - accepted_values:
+              values: [true, false]

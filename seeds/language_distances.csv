@@ -1,0 +1,8 @@
+language_pair_code,source_language,target_language,lexical_distance,phonological_distance
+en-de,English,German,44.47,37.64
+fr-es,French,Spanish,19.96,38.58
+fr-it,French,Italian,21.63,40.94
+fr-pt,French,Portuguese,17.76,43.27
+es-it,Spanish,Italian,10.40,11.13
+es-pt,Spanish,Portuguese,1.75,14.22
+it-pt,Italian,Portuguese,11.53,41.23
