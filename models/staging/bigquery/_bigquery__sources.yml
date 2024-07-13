@@ -13,32 +13,32 @@ sources:
         description: Verb modifiers, morphological components for the surface form like tense, gender, person.
         columns:
           - name: modifier_code
-            tests:
+            data_tests:
               - not_null
               - unique
           
           - name: modifier_category
-            tests:
+            data_tests:
               - not_null
           
           - name: modifier_detail
-            tests:
+            data_tests:
               - not_null
       
       - name: lexeme_reference_pos
         description: High-level Part of Speech, POS
         columns:
           - name: pos_code
-            tests:
+            data_tests:
               - not_null
               - unique
           
           - name: pos_category
-            tests:
+            data_tests:
               - not_null
               - accepted_values:
                   values: ['POS']
           
           - name: pos_detail
-            tests:
+            data_tests:
               - not_null

@@ -15,6 +15,7 @@ renamed as (
         , learning_language
         , ui_language as native_language
         , lexeme_string
+        , ui_language || '-' || learning_language as language_pair_code
 
         -- numerics
         , p_recall as probability_recall_word
@@ -48,7 +49,9 @@ renamed as (
             / GREATEST(delta / 3600, 1) as forgetting_rate
         
         -- timestamps
-        , timestamp_seconds(`timestamp`) as timestamp_date
+        , timestamp_seconds(`timestamp`) as timestamp_datetime
+        , DATE(timestamp_seconds(`timestamp`)) as timestamp_date
+        , TIME(timestamp_seconds(`timestamp`)) as timestamp_time
 
     from source
 )
