@@ -1,0 +1,7 @@
+version: 2
+
+models:
+  - name: int_analytics_learning_traces
+    description: >
+      A big table dataset that joins facts and dimension tables from staging and utilities.
+      This table is used to build cognitive models.

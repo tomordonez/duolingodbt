@@ -54,6 +54,13 @@ renamed as (
         , TIME(timestamp_seconds(`timestamp`)) as timestamp_time
 
     from source
+),
+
+native_language_english as (
+    select
+        *
+    from renamed
+    where native_language = 'en'
 )
 
-select * from renamed
+select * from native_language_english
