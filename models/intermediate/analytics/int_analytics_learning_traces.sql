@@ -47,16 +47,6 @@ raw_traces_native_language_learning_language as (
         on traces.learning_language = lang.language_code
 ),
 
-raw_traces_language_distance as (
-    select
-        traces.*
-        , lang.lexical_distance
-        , lang.phonological_distance
-    from raw_traces_native_language_learning_language traces
-    join language_distances lang
-        on traces.language_pair_code = lang.language_pair_code
-),
-
 language_traces as (
     select
         traces.*
@@ -72,7 +62,7 @@ language_traces as (
         , dates.month_start_date
         , dates.month_end_date
         , dates.year_number
-    from raw_traces_language_distance traces
+    from raw_traces_native_language_learning_language traces
     join dim_date dates
         on traces.timestamp_date = dates.date_day
 )
