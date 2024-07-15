@@ -1,6 +1,11 @@
 version: 2
 
 models:
+  - name: hourly_analysis
+    description: >
+      Analyze learning rates over different times (hours) 
+      to see if there are patterns in when English speakers learn better.
+
   - name: daily_analysis
     description: >
       Analyze learning rates over different times (days) 
@@ -11,12 +16,12 @@ models:
       Analyze the forgetting rate to determine if there is a difference in 
       how quickly English speakers forget German vs. Romance languages.
 
-  - name: history_learning_rate
+  - name: historical_learning_rate
     description: >
       Aggregate the history_learning_rate to see overall how English speakers 
       progress in Germanic vs. Romance languages over time.
 
-  - name: learning_rate
+  - name: session_learning_rate
     description: >
       Compare the average session_learning_rate for learning 
       German vs. Romance languages for users whose native language is English.
