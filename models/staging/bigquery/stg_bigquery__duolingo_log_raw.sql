@@ -8,7 +8,8 @@ renamed as (
 
     select
         -- ids
-        user_id
+        user_id || lexeme_id || delta as trace_id
+        , user_id
         , lexeme_id
 
         -- strings
@@ -49,9 +50,9 @@ renamed as (
             / GREATEST(delta / 3600, 1) as forgetting_rate
         
         -- timestamps
-        , timestamp_seconds(`timestamp`) as timestamp_datetime
-        , DATE(timestamp_seconds(`timestamp`)) as timestamp_date
-        , TIME(timestamp_seconds(`timestamp`)) as timestamp_time
+        , timestamp_seconds(`timestamp`) as created_at
+        , DATE(timestamp_seconds(`timestamp`)) as created_date
+        , TIME(timestamp_seconds(`timestamp`)) as created_time
 
     from source
 ),

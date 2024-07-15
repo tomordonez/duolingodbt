@@ -1,0 +1,43 @@
+version: 2
+
+models:
+  - name: hourly_analysis
+    description: >
+      Analyze learning rates over different times (hours) 
+      to see if there are patterns in when English speakers learn better.
+
+  - name: daily_analysis
+    description: >
+      Analyze learning rates over different times (days) 
+      to see if there are patterns in when English speakers learn better.
+
+  - name: forgetting_rate
+    description: >
+      Analyze the forgetting rate to determine if there is a difference in 
+      how quickly English speakers forget German vs. Romance languages.
+
+  - name: historical_learning_rate
+    description: >
+      Aggregate the history_learning_rate to see overall how English speakers 
+      progress in Germanic vs. Romance languages over time.
+
+  - name: session_learning_rate
+    description: >
+      Compare the average session_learning_rate for learning 
+      German vs. Romance languages for users whose native language is English.
+
+  - name: lexeme_familiarity
+    description: >
+      Examine lexeme familiarity and retention to assess if certain language 
+      lexemes are easier for English speakers to retain.
+
+  - name: session_activity
+    description: >
+      Look at the total sessions and correct answers ratio for deeper 
+      insight into engagement and success rate.
+
+  - name: session_effectiveness
+    description: >
+      Evaluate the effectiveness of practice sessions 
+      (time_effectiveness_since_last_practice) for English speakers learning 
+      Germanic vs. Romance languages.
