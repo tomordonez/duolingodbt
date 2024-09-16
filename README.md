@@ -2,6 +2,8 @@
 
 ## References
 
+Inspired from this paper:
+
 B. Settles, "Replication Data for: A Trainable Spaced Repetition Model for Language Learning," Harvard Dataverse, V1, 2017. [Online]. Available: https://doi.org/10.7910/DVN/N8XJME
 
 ## Data Ingestion
@@ -13,19 +15,19 @@ Load the raw CSV dataset into BigQuery:
 * Created a dataset in BigQuery (cheapest options)
 * In the dataset, created a table and selected from the bucket, type CSV, native table, detect schema, etc
 
-Current schema
+**Current schema**
 
-p_recall: FLOAT
-timestamp: INTEGER
-delta: INTEGER
-user_id: STRING
-learning_language: STRING
-ui_language: STRING
-lexeme_id: STRING
-history_seen: INTEGER
-history_correct: INTEGER
-session_seen: INTEGER
-session_correct: INTEGER
+    p_recall: FLOAT
+    timestamp: INTEGER
+    delta: INTEGER
+    user_id: STRING
+    learning_language: STRING
+    ui_language: STRING
+    lexeme_id: STRING
+    history_seen: INTEGER
+    history_correct: INTEGER
+    session_seen: INTEGER
+    session_correct: INTEGER
 
 ## Staging
 
@@ -86,7 +88,10 @@ Timestamps
 
 A seed `languages.csv` with this schema
 
-    language_code,language_name,is_germanic,is_romance
+    language_code
+    language_name
+    is_germanic
+    is_romance
 
 ### Utilities
 
@@ -125,13 +130,3 @@ It uses this SQL example:
 **Models**
 
 Created aggregation models to analyze if a native English speaker learns another Germanic language (e.g., English, German) faster than a Romance language (Spanish, Italian, Portuguese, French)
-
-## Rules-based model
-
-Using Google Colab, connected to the intermediate model in BigQuery to load the dataset using pandas. Used scikit-learn to apply the same standardization to the features (I couldn't apply them in the intermediate model in BigQuery because the resource I used was the cheapest and when trying to run this transformation, the resource reached the memory limits).
-
-Installed the package `durable-rules` to create a model that outputs spaced-repetition learning schedules.
-
-## Neural Net model
-
-With the dataset in a pandas dataframe, already standardized, used PyTorch to create a neural net model that also outputs spaced-repetition learning schedules.
